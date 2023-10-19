@@ -1,3 +1,4 @@
+README.md
 setup.py
 runreveal/__init__.py
 runreveal/runreveal.py

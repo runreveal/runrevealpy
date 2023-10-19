@@ -25,10 +25,8 @@ class RunReveal:
         if not AUTH_TOKEN:
             raise ValueError("AUTH_TOKEN environment variable not set!")
     
-        # Creating the HTTP Basic auth header
-        auth_string = b64encode(f":{AUTH_TOKEN}".encode()).decode()
         headers = {
-            "Authorization": f"Basic {auth_string}"
+            "Authorization": f"Basic {AUTH_TOKEN}"
         }
     
         payload = {

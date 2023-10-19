@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='runreveal',
-    version='0.0.4',
+    version='0.0.5',
     author='Evan Johnson',
     author_email='evan@runreveal.com',
     description='Interact with the RunReveal API',
