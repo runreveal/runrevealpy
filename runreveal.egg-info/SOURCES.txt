@@ -5,4 +5,5 @@ runreveal/runreveal.py
 runreveal.egg-info/PKG-INFO
 runreveal.egg-info/SOURCES.txt
 runreveal.egg-info/dependency_links.txt
+runreveal.egg-info/requires.txt
 runreveal.egg-info/top_level.txt
