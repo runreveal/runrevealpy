@@ -10,7 +10,7 @@ WORKSPACE_ID = os.getenv("RUNREVEAL_WORKSPACE")
 AUTH_TOKEN = os.getenv("RUNREVEAL_AUTH_TOKEN")
 
 class RunReveal:
-    def __init__(self, query, useai):
+    def __init__(self, query, useai=False):
         self.query = query
         self.useai = useai
         self.resp = self.logs()
@@ -38,7 +38,13 @@ class RunReveal:
     
         response = requests.post(f"{API_URL}?workspaceid={WORKSPACE_ID}", json=payload, headers=headers)
 
-        return json.loads(response.text)
+        robj = json.loads(response.text)
+        if response.status_code != 200:
+            raise ValueError(f"Error: {robj['error']}")
+        if robj['success'] != True:
+            raise ValueError(f"Error: {robj['error']}")
+
+        return robj
 
     def get_rows(self):
         transposed_values = list(zip(*self.values))  # Transposing the list of lists
