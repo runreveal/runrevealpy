@@ -21,9 +21,9 @@ class RunReveal:
         
     def logs(self):
         if not WORKSPACE_ID:
-            raise ValueError("WORKSPACE_ID environment variable not set!")
+            raise ValueError("RUNREVEAL_WORKSPACE environment variable not set!")
         if not AUTH_TOKEN:
-            raise ValueError("AUTH_TOKEN environment variable not set!")
+            raise ValueError("RUNREVEAL_AUTH_TOKEN environment variable not set!")
     
         headers = {
             "Authorization": f"Basic {AUTH_TOKEN}"
